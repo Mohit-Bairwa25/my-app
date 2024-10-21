@@ -1,0 +1,18 @@
+Start with
+npm init
+
+Sorry, name can no longer contain capital letters.
+package name: (backend) notebook-backend
+version: (1.0.0)
+description: notebook - your notes on the cloud
+
+leave the follwing things empty
+
+in last type
+yes
+
+npm i express
+to install express
+
+npm i mongoose
+to install mongoose

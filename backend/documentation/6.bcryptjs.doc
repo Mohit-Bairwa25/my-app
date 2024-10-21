@@ -1,0 +1,5 @@
+npm i bcryptjs
+
+Adding Salt & Pepper Method Through Bcryptjs
+
+var bcrypt = require('bcryptjs');

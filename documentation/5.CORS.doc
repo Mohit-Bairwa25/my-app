@@ -1,0 +1,9 @@
+npm install cors
+
+CORS is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options.
+
+var express = require('express')
+var cors = require('cors')
+var app = express()
+
+app.use(cors())

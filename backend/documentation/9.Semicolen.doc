@@ -1,0 +1,76 @@
+// Semicolon Usage in JavaScript
+
+// 1. Optional Semicolons:
+// Semicolons are often optional at the end of statements:
+
+// With semicolon (unnecessary but not incorrect)
+if (condition) { doSomething(); };
+
+// Without semicolon (preferred and cleaner)
+if (condition) { doSomething() }
+
+// For single-line if statements, you can even omit the curly braces
+if (condition) doSomething()
+
+// Example from your code:
+// Original (with unnecessary semicolons)
+if(title){newNote.title = title};
+if(description){newNote.description = description};
+if(tag){newNote.tag = tag};
+
+// Cleaned up (without unnecessary semicolons)
+if(title) { newNote.title = title }
+if(description) { newNote.description = description }
+if(tag) { newNote.tag = tag }
+
+// Or even more concise (for single-line statements)
+if(title) newNote.title = title
+if(description) newNote.description = description
+if(tag) newNote.tag = tag
+
+// 2. Necessary Semicolons:
+// There are cases where semicolons are necessary to prevent errors or unexpected behavior:
+
+// a. When a line begins with (, [, or `
+let a = 5
+;(function() {
+  // ...
+})()
+
+// b. When using multiple statements on a single line:
+let a = 5; let b = 6
+
+// c. Before statements starting with ++ or --:
+let a = b
+;++a
+
+// d. In for loops:
+for (let i = 0; i < 10; i++) {
+  // ...
+}
+
+// e. To terminate a do...while loop:
+do {
+  // ...
+} while (condition);
+
+// f. When using the comma operator in a return statement:
+return (
+  doSomething(),
+  resultValue
+);
+
+// g. To separate statements in arrow functions that have a block body:
+const func = () => {
+  doSomething();
+  return result;
+};
+
+// h. After a function declaration if it's part of an expression:
+const result = function() { return 1 }();
+
+// Note: While modern JavaScript has Automatic Semicolon Insertion (ASI),
+// relying on it can sometimes lead to unexpected results. Many developers
+// choose to always use semicolons to be explicit and avoid potential issues,
+// while others prefer to omit them where possible for a cleaner look.
+// Consistent style within a project is generally more important than which style you choose.

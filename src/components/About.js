@@ -17,7 +17,7 @@ export default function About() {
               aria-controls="collapseOne"
               
             >
-              Get Daily News Updates
+              Save Your Notes on Cloud
             </button>
           </h2>
           <div
@@ -26,10 +26,10 @@ export default function About() {
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body" >
-              <strong>Stay Informed with Our Free News App </strong>
-              Get the latest headlines at your fingertips with our user-friendly news app. We bring you up-to-the-minute coverage from reliable sources across the globe.
-              <code> Never miss a story! </code>
-              Our app ensures you're always in the know, whether you're commuting, relaxing at home, or on the go. With a clean design and intuitive navigation, staying informed has never been easier.
+            <strong>Stay Organized with Our Free Note-Taking App. </strong>
+              Capture your thoughts and ideas effortlessly with our user-friendly note-taking app. Save your notes securely on the cloud, ensuring your data is protected with three levels of security.
+              <code> Never lose a note! </code>
+              Our app guarantees that your notes are safe and accessible, even if local storage fails. With a clean design and intuitive navigation, keeping your notes organized has never been easier.
             </div>
           </div>
         </div>
@@ -53,7 +53,7 @@ export default function About() {
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body" >
-              <strong>Enjoy all features at no cost.</strong> This NewsBUS - Stop is completely free to use. You can access all functionalities without any hidden charges or subscriptions. <code>.It will be free Forever</code>,
+              <strong>Enjoy all features at no cost.</strong> This My-Notebook is completely free to use. You can access all functionalities without any hidden charges or subscriptions. <code>.It will be free Forever</code>,
               spend your money on important stuff.
             </div>
           </div>

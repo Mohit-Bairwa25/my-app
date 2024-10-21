@@ -1,52 +1,51 @@
 import './App.css';
-import React, { Component } from 'react'
-import Navbar from './components/Navbar';
-import News from './components/News';
-import Home from './components/Home';
 import {
   BrowserRouter as Router,
   Routes,
-  Route
+  Route,
 } from "react-router-dom";
-import LoadingBar from 'react-top-loading-bar'
+import Navbar from './components/Navbar';
+import Home from './components/Home'; // Keep Home.js for notes
+import MyNotebook from './components/MyNotebook'; // New homepage
 import About from './components/About';
+import NoteState from './context/notes/NoteState';
+import Alert from './components/Alert';
+import Login from './components/Login';
+import Signup from './components/Signup';
+import { useState } from 'react';
 
-export default class App extends Component {
-  pageSize = 9;
-//  apiKey = '241c3b2483cd44128fa887a3d56505e2'
-    apiKey = 'ae45bdab18a54154a7f61a25a53028ae'
+function App() {
+  const [alert, setAlert] = useState(null);
 
-  state = {
-    progress: 0
+  const showAlert = (message, type) => {
+    setAlert({
+      msg: message,
+      type: type
+    })
+    setTimeout(() => {
+      setAlert(null);
+    }, 1500);
   }
 
-  setProgress = (progress) => {
-    this.setState({progress: progress})
-  }
-
-  render() {
-    return (
-      <div>
+  return (
+    <>
+      <NoteState>
         <Router>
-          <Navbar/>
-          <LoadingBar
-            color='#f11946'
-            height={4}
-            progress={this.state.progress}
-          />
-          <Routes>
-            <Route path="/" element={<Home setProgress={this.setProgress} apiKey={this.apiKey} key="home" pageSize={this.pageSize} country="in" category="general"/>} />
-            <Route path="/home" element={<Home setProgress={this.setProgress} apiKey={this.apiKey} key="home" pageSize={this.pageSize} country="in" category="general"/>} />
-            <Route path="/business" element={<News setProgress={this.setProgress} apiKey={this.apiKey} key="business" pageSize={this.pageSize} country="in" category="business"/>} />
-            <Route path="/entertainment" element={<News setProgress={this.setProgress} apiKey={this.apiKey} key="entertainment" pageSize={this.pageSize} country="in" category="entertainment"/>} />
-            <Route path="/health" element={<News setProgress={this.setProgress} apiKey={this.apiKey} key="health" pageSize={this.pageSize} country="in" category="health"/>} />
-            <Route path="/science" element={<News setProgress={this.setProgress} apiKey={this.apiKey} key="science" pageSize={this.pageSize} country="in" category="science"/>} />
-            <Route path="/sports" element={<News setProgress={this.setProgress} apiKey={this.apiKey} key="sports" pageSize={this.pageSize} country="in" category="sports"/>} />
-            <Route path="/technology" element={<News setProgress={this.setProgress} apiKey={this.apiKey} key="technology" pageSize={this.pageSize} country="in" category="technology"/>} />
-            <Route path="/about" element={<About/>} />
-          </Routes>
+          <Navbar />
+          <Alert alert={alert} />
+          <div className="container">
+            <Routes>
+              <Route path="/mynotebook" element={<MyNotebook />} /> {/* New welcome page */}
+              <Route path="/Home" element={<Home showAlert={showAlert} />} /> {/* Notes functionality */}
+              <Route path="/About" element={<About />} />
+              <Route path="/login" element={<Login showAlert={showAlert} />} />
+              <Route path="/signup" element={<Signup showAlert={showAlert} />} />
+            </Routes>
+          </div>
         </Router>
-      </div>
-    )
-  }
+      </NoteState>
+    </>
+  );
 }
+
+export default App;

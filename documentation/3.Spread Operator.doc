@@ -1,0 +1,14 @@
+Spread Operator in Object Literals
+
+The spread operator in object literals is a way to copy properties from one object to another. It uses three dots (...) followed by the object you want to spread. This operator helps you merge objects or add properties to an existing object in a concise and readable way.
+
+const person = { name: 'Alice', age: 25 };
+const job = { title: 'Developer', company: 'Tech Corp' };
+
+// Using spread operator to combine objects
+const employee = { ...person, ...job };
+
+console.log(employee);
+// Output: { name: 'Alice', age: 25, title: 'Developer', company: 'Tech Corp' }
+
+In this example, ...person and ...job are used to spread the properties of person and job into the employee object. The result is a new object that combines the properties of both person and job.

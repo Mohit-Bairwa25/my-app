@@ -1,0 +1,11 @@
+The map method in JavaScript is used to create a new array by applying a function to each element of an existing array. It doesn't change the original array but instead returns a new array with the transformed elements.
+
+const numbers = [1, 2, 3, 4, 5];
+
+// Using map to double each number
+const doubledNumbers = numbers.map(number => number * 2);
+
+console.log(doubledNumbers);
+// Output: [2, 4, 6, 8, 10]
+
+In this example, the map method takes each element in the numbers array, applies the function number => number * 2 to it (which doubles the number), and returns a new array doubledNumbers with the results. The original numbers array remains unchanged.

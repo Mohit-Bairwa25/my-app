@@ -1,0 +1,33 @@
+Relative File Paths
+Relative file paths are used to link files and resources within the same project. They are defined in relation to the location of the current file.
+
+Basic Syntax
+1.  Current Directory (./):
+    Refers to the current directory.
+    Example: ./script.js refers to script.js in the same directory.
+2.  Parent Directory (../):
+    Moves up one directory level.
+    Example: ../images/picture.jpg refers to picture.jpg in the images directory, one level up.
+3.  Nested Directories:
+    Navigate through multiple directories.
+    Example: ../../styles/main.css moves up two levels and then into the styles directory.
+
+Examples
+
+1.  Importing a Module:
+    JavaScript
+
+    import myModule from './modules/myModule.js'; // Same directory
+    import anotherModule from '../lib/anotherModule.js'; // One level up
+
+2.  Loading an Image:
+    HTML
+
+    <img src="./images/logo.png" alt="Logo"> <!-- Same directory -->
+    <img src="../assets/images/logo.png" alt="Logo"> <!-- One level up -->
+
+3.  Linking a Stylesheet:
+    HTML
+
+    <link rel="stylesheet" href="./styles/main.css"> <!-- Same directory -->
+    <link rel="stylesheet" href="../styles/main.css"> <!-- One level up -->

@@ -1,0 +1,24 @@
+Install express-validator:
+npm install express-validator
+
+Verify the installation:
+npm list express-validator
+
+Check for any other missing modules:
+npm install
+
+Install bcryptjs:
+npm install bcryptjs
+
+Verify the installation:
+npm list bcryptjs
+
+Install jsonwebtoken:
+npm install jsonwebtoken
+
+Verify the installation:
+npm list jsonwebtoken
+
+
+Restart your server:
+npx nodemon index.js
